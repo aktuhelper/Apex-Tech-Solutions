@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { Moon, Sun, Menu, X, ArrowRight, Mail, Phone, MapPin, Github, Linkedin, Twitter, Sparkles, Zap, Flame, Crown } from 'lucide-react';
+import { Moon, Sun, Menu, X, ArrowRight, Sparkles, Zap, Flame, Crown } from 'lucide-react';
 
 export default function DigitalAgencyPortfolio() {
     const [darkMode, setDarkMode] = useState(true);
@@ -394,7 +394,7 @@ export default function DigitalAgencyPortfolio() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
+                        {projects.map((project) => (
                             <a
                                 key={project.id}
                                 href={project.link}
@@ -464,43 +464,7 @@ export default function DigitalAgencyPortfolio() {
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                        <div className="space-y-8">
-                            {[
-                                { icon: <Mail />, title: "Email", info: "hello@apexagency.io", gradient: "from-cyan-500 to-blue-600" },
-                                { icon: <Phone />, title: "Phone", info: "+1 (555) 999-0000", gradient: "from-purple-500 to-pink-600" },
-                                { icon: <MapPin />, title: "Location", info: "Silicon Valley, CA", gradient: "from-pink-500 to-orange-600" }
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-start gap-6 group cursor-pointer">
-                                    <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent" />
-                                        {item.icon}
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-lg mb-1 text-gray-400">{item.title}</h3>
-                                        <p className="text-xl font-semibold">{item.info}</p>
-                                    </div>
-                                </div>
-                            ))}
-
-                            <div className="flex gap-4 pt-8">
-                                {[
-                                    { icon: <Twitter />, gradient: "from-cyan-500 to-blue-600" },
-                                    { icon: <Linkedin />, gradient: "from-purple-500 to-pink-600" },
-                                    { icon: <Github />, gradient: "from-pink-500 to-orange-600" }
-                                ].map((social, i) => (
-                                    <button
-                                        key={i}
-                                        className={`relative w-14 h-14 rounded-xl bg-gradient-to-br ${social.gradient} flex items-center justify-center hover:scale-110 transition-all duration-300 group`}
-                                    >
-                                        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent" />
-                                        <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${social.gradient} blur-lg opacity-0 group-hover:opacity-75 transition-opacity`} />
-                                        {social.icon}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
+                    <div className="max-w-2xl mx-auto">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <input
                                 type="text"
@@ -548,7 +512,7 @@ export default function DigitalAgencyPortfolio() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                         <div className="text-3xl font-black bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                            APEX
+                            APEX TECH Solutions
                         </div>
                         <p className={darkMode ? 'text-gray-600' : 'text-gray-500'}>© 2024 Apex Digital Agency. Redefining Digital Excellence.</p>
                     </div>
@@ -560,18 +524,6 @@ export default function DigitalAgencyPortfolio() {
                     0%, 100% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }
                 }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px) rotate(0deg); }
-                    50% { transform: translateY(-20px) rotate(5deg); }
-                }
-                @keyframes float-delayed {
-                    0%, 100% { transform: translateY(0px) rotate(0deg); }
-                    50% { transform: translateY(-30px) rotate(-5deg); }
-                }
-                @keyframes float-slow {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-15px); }
-                }
                 @keyframes scroll {
                     0% { opacity: 0; transform: translateY(0); }
                     50% { opacity: 1; }
@@ -580,15 +532,6 @@ export default function DigitalAgencyPortfolio() {
                 .animate-gradient-x {
                     background-size: 200% 200%;
                     animation: gradient-x 3s ease infinite;
-                }
-                .animate-float {
-                    animation: float 20s ease-in-out infinite;
-                }
-                .animate-float-delayed {
-                    animation: float-delayed 25s ease-in-out infinite;
-                }
-                .animate-float-slow {
-                    animation: float-slow 30s ease-in-out infinite;
                 }
                 .animate-scroll {
                     animation: scroll 2s ease-in-out infinite;
